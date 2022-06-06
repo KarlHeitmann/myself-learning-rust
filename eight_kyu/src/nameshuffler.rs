@@ -50,6 +50,12 @@ pub fn run() {
   println!("{}", name_shuffler_simple("john McClane"));
   println!("{}", name_shuffler_simple("Mary jeggins"));
   println!("{}", name_shuffler_simple("Tom Jerry"));
+
+  println!("------ clever -------");
+
+  println!("{}", name_shuffler_clever("john McClane"));
+  println!("{}", name_shuffler_clever("Mary jeggins"));
+  println!("{}", name_shuffler_clever("Tom Jerry"));
 }
 
 
