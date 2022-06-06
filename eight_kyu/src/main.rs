@@ -13,6 +13,10 @@ fn name_shuffle(s: &str) -> String {
   return last.to_string() + " " + name;
 }
 
+fn name_shuffler_best_practice(s: &str) -> String {
+    s.rsplit(" ").collect::<Vec<&str>>().join(" ")
+}
+
 fn main() {
   let t1 = name_shuffle("john McClane");
   let t2 = name_shuffle("Mary jeggins");
@@ -20,5 +24,9 @@ fn main() {
   println!("{}", t1);
   println!("{}", t2);
   println!("{}", t3);
+
+  println!("{}", name_shuffler_best_practice("john McClane"));
+  println!("{}", name_shuffler_best_practice("Mary jeggins"));
+  println!("{}", name_shuffler_best_practice("Tom Jerry"));
 }
 
