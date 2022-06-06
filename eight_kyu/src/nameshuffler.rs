@@ -17,11 +17,16 @@ fn name_shuffler_best_practice(s: &str) -> String {
   s.rsplit(" ").collect::<Vec<&str>>().join(" ")
 }
 
+fn name_shuffler_clever(s: &str) -> String {
+    let (f, l) = s.split_once(' ').unwrap();
+    [l, f].join(" ")
+}
+
 fn name_shuffler_simple(s: &str) -> String {
     let mut output = String::new();
     for name in s.split_whitespace().rev() {
-        output.push_str(name);
-        output.push_str(" ");
+      output.push_str(name);
+      output.push_str(" ");
     }
     return output.trim_end().to_string();
 }
@@ -45,6 +50,12 @@ pub fn run() {
   println!("{}", name_shuffler_simple("john McClane"));
   println!("{}", name_shuffler_simple("Mary jeggins"));
   println!("{}", name_shuffler_simple("Tom Jerry"));
+
+  println!("------ clever -------");
+
+  println!("{}", name_shuffler_clever("john McClane"));
+  println!("{}", name_shuffler_clever("Mary jeggins"));
+  println!("{}", name_shuffler_clever("Tom Jerry"));
 }
 
 
