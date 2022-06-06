@@ -15,6 +15,11 @@ pub fn run() {
   println!("{}", replace_dots_fix("no dots"));
   println!("{}", replace_dots_fix("one.two.three"));
   println!("{}", replace_dots_fix("........"));
+
+  println!("{}", replace_dots_match(""));
+  println!("{}", replace_dots_match("no dots"));
+  println!("{}", replace_dots_match("one.two.three"));
+  println!("{}", replace_dots_match("........"));
   /*
   assert_eq!(replace_dots(""), "");
   assert_eq!(replace_dots("no dots"), "no dots");
@@ -52,5 +57,9 @@ fn replace_dots(s: &str) -> String {
 
 fn replace_dots_fix(s: &str) -> String {
   Regex::new(r"\.").unwrap().replace_all(s, "-").to_string()
+}
+
+fn replace_dots_match(s: &str) -> String {
+    s.chars().map(|c| match c { '.' => '-', _ => c }).collect()
 }
 
