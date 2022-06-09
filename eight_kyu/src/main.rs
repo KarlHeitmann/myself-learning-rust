@@ -1,14 +1,16 @@
 // use nameshuffler;
 use std::env;
 
+mod kyu6;
 mod kyu7;
 mod kyu8;
+
 
 fn main() {
     let args: Vec<String> = env::args().collect();
     println!("{:?}", args);
     if args.len() == 1 {
-        kyu7::divisors::run();
+        kyu6::bouncing_ball::run();
     } else {
         if args[1] == "name_shuffler" {
             kyu8::nameshuffler::run();
@@ -18,6 +20,8 @@ fn main() {
             kyu8::remove_string_spaces::run();
         } else if args[1] == "plurals" {
             kyu8::plurals::run();
+        } else if args[1] == "bouncing_ball" {
+            kyu6::bouncing_ball::run();
         } else if args[1] == "divisors" {
             kyu7::divisors::run();
         } else if args[1] == "even_or_odd" {
