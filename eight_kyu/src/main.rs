@@ -10,7 +10,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     println!("{:?}", args);
     if args.len() == 1 {
-        kyu6::bouncing_ball::run();
+        kyu8::square_n_sum::run();
     } else {
         if args[1] == "name_shuffler" {
             kyu8::nameshuffler::run();
@@ -22,6 +22,8 @@ fn main() {
             kyu8::plurals::run();
         } else if args[1] == "bouncing_ball" {
             kyu6::bouncing_ball::run();
+        } else if args[1] == "square_n_sum" {
+            kyu8::square_n_sum::run();
         } else if args[1] == "divisors" {
             kyu7::divisors::run();
         } else if args[1] == "even_or_odd" {

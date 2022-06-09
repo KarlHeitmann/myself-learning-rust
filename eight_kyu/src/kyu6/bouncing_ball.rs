@@ -77,5 +77,6 @@ pub fn run() {
     println!("{}", bouncing_ball(30.0, 0.66, 1.5)); //, 15);
     println!("{}", bouncing_ball(40.0, 0.4, 10.0)); //, 3);
     println!("{}", bouncing_ball_clever(10.0, 0.6, 10.0)); //, -1);
+    println!("{}", bouncing_ball_best_practice(10.0, 0.6, 10.0)); //, -1);
 }
 
